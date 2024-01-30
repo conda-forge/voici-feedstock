@@ -1,38 +1,68 @@
-{% set name = "voici" %}
-{% set version = "0.5.0" %}
+{% set name = "voici-packages" %}
+{% set version = "0.6.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 69dd140bc8075ca98eaf82d1f0f6a0e4fdf9fb2855f9c43c0d3fdbd58f86eaf0
+  - url: https://pypi.io/packages/source/v/voici_core/voici_core-{{ version }}.tar.gz
+    sha256: 2af8771103a3d8f989eebde0fc22e736b9434feebb692c1131ba1aafc83a4c7a
+    folder: voici_core
+  - url: https://pypi.io/packages/source/v/voici/voici-{{ version }}.tar.gz
+    sha256: 8ffb956c0e651759859850865048d075134e7266b0d1ef4d09c3b49a38b886bf
+    folder: voici
 
 build:
-  number: 0
   noarch: python
-  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
-  entry_points:
-    - voici = voici.app:main
+  number: 0
 
-requirements:
-  host:
-    - python >=3.8
-    - pip
-    - nodejs >=18,<19
-    - hatch-jupyter-builder >=0.5.3
-    - hatchling >=1.8.1
-  run:
-    - python >=3.8
-    - voila >=0.5.5,<0.6
-    - jupyterlite-core >=0.2.0,<0.3.0
+outputs:
+  - name: voici_core
+    version: {{ version }}
+    build:
+      noarch: python
+      script: |
+        cd voici_core
+        python -m pip install . -vv --no-deps --no-build-isolation --ignore-installed --no-index
+      entry_points:
+        - voici = voici.app:main
+    requirements:
+      host:
+        - python >=3.8
+        - pip
+        - nodejs >=18,<19
+        - hatch-jupyter-builder >=0.5.3
+        - hatchling >=1.8.1
+      run:
+        - python >=3.8
+        - voila >=0.5.5,<0.6
+        - jupyterlite-core >=0.2.0,<0.3.0
+    test:
+      imports:
+        - voici
+      commands:
+        - voici --help
 
-test:
-  imports:
-    - voici
-  commands:
-    - voici --help
+  - name: voici
+    version: {{ version }}
+    build:
+      noarch: python
+      script: |
+        cd voici
+        python -m pip install . -vv --no-deps --no-build-isolation --ignore-installed --no-index
+    requirements:
+      host:
+        - python >=3.8
+        - pip
+        - hatch-jupyter-builder >=0.5.3
+        - hatchling >=1.8.1
+      run:
+        - python >=3.8
+        - voici_core
+        - jupyterlite-xeus >=0.1.6,<0.2
+      run_constrained:
+        - jupytercad_core ={{ version }}
 
 about:
   home: https://github.com/voila-dashboards/voici
