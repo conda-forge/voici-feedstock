@@ -26,7 +26,7 @@ outputs:
         cd voici_core
         python -m pip install . -vv --no-deps --no-build-isolation --ignore-installed --no-index
       entry_points:
-        - voici = voici.app:main
+        - voici = voici_core.app:main
     requirements:
       host:
         - python >=3.8
