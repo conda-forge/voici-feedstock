@@ -74,7 +74,7 @@ about:
   home: https://github.com/voila-dashboards/voici
   license: BSD-3-Clause
   license_family: BSD
-  license_file: LICENSE
+  license_file: voici/LICENSE
   summary: Voici turns Jupyter notebooks into static web applications
   description: |
     Voici is a tool for generating static dashboards from Jupyter Notebooks.
