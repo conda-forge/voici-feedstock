@@ -60,7 +60,7 @@ outputs:
       run:
         - python >=3.8
         - voici_core
-        - jupyterlite-xeus >=0.1.6,<0.3
+        - jupyterlite-xeus >=2.0.0,<3
       run_constrained:
         - voici_core ={{ version }}
     test:
