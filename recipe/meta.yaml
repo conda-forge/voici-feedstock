@@ -1,5 +1,5 @@
 {% set name = "voici-packages" %}
-{% set version = "0.7.0" %}
+{% set version = "0.7.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   - url: https://pypi.io/packages/source/v/voici_core/voici_core-{{ version }}.tar.gz
-    sha256: 7035596bf97450611f1003363fa1aacbf5b3a71bd40a1abaf1a2e0847e4062ef
+    sha256: f870fc362ab08a189ed013b7ddb2b482e83873ad72efe74e82aed33acb7126ae
     folder: voici_core
   - url: https://pypi.io/packages/source/v/voici/voici-{{ version }}.tar.gz
-    sha256: efe59ecdf2e1d921222b8deb4a9613488dcf81479111a4f68c2178c02fc5a340
+    sha256: 26b16366e4d7327c1df99899c6f44c233f2e212a7c329de5536ff107c7118dfd
     folder: voici
 
 build:
@@ -60,7 +60,7 @@ outputs:
       run:
         - python >=3.8
         - voici_core
-        - jupyterlite-xeus >=0.1.6,<0.3
+        - jupyterlite-xeus >=2.0.0,<3
       run_constrained:
         - voici_core ={{ version }}
     test:
