@@ -15,7 +15,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
 
 outputs:
   - name: voici_core
@@ -37,7 +37,7 @@ outputs:
       run:
         - python >=3.8
         - voila >=0.5.5,<0.6
-        - jupyterlite-core >=0.2.0,<0.5.0
+        - jupyterlite-core >=0.2.0,<0.6.0
     test:
       imports:
         - voici_core
@@ -60,7 +60,7 @@ outputs:
       run:
         - python >=3.8
         - voici_core
-        - jupyterlite-xeus >=2.0.0,<3
+        - jupyterlite-xeus >=2.0.0,<4
       run_constrained:
         - voici_core ={{ version }}
     test:
