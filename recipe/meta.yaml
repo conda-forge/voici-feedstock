@@ -6,16 +6,16 @@ package:
   version: {{ version }}
 
 source:
-  - url: https://pypi.io/packages/source/v/voici_core/voici_core-{{ version }}.tar.gz
+  - url: https://pypi.org/packages/source/v/voici_core/voici_core-{{ version }}.tar.gz
     sha256: 50d0748d60b3c51e6508c5a02a2f6bd43db66370bf564cb6c5a3e6cf949c4734
     folder: voici_core
-  - url: https://pypi.io/packages/source/v/voici/voici-{{ version }}.tar.gz
+  - url: https://pypi.org/packages/source/v/voici/voici-{{ version }}.tar.gz
     sha256: 920db94aadd556d683862f8c25846d9dc7dd0632a84a6131f695c251f1311220
     folder: voici
 
 build:
   noarch: python
-  number: 1
+  number: 2
 
 outputs:
   - name: voici_core
@@ -29,16 +29,18 @@ outputs:
         - voici = voici_core.app:main
     requirements:
       host:
-        - python >=3.8
+        - python {{ python_min }}
         - pip
         - nodejs >=18,<19
         - hatch-jupyter-builder >=0.5.3
         - hatchling >=1.8.1
       run:
-        - python >=3.8
+        - python >={{ python_min }}
         - voila >=0.5.5,<0.6
         - jupyterlite-core >=0.2.0,<0.6.0
     test:
+      requires:
+        - python {{ python_min }}
       imports:
         - voici_core
       commands:
@@ -53,17 +55,19 @@ outputs:
         python -m pip install . -vv --no-deps --no-build-isolation --ignore-installed --no-index
     requirements:
       host:
-        - python >=3.8
+        - python {{ python_min }}
         - pip
         - hatch-jupyter-builder >=0.5.3
         - hatchling >=1.8.1
       run:
-        - python >=3.8
+        - python >={{ python_min }}
         - voici_core
         - jupyterlite-xeus >=2.0.0,<4
       run_constrained:
         - voici_core ={{ version }}
     test:
+      requires:
+        - python {{ python_min }}
       imports:
         - voici
         - jupyterlite_xeus
