@@ -37,7 +37,7 @@ outputs:
       run:
         - python >={{ python_min }}
         - voila >=0.5.5,<0.6
-        - jupyterlite-core >=0.2.0,<0.6.0
+        - jupyterlite-core >=0.2.0,<0.7.0
     test:
       requires:
         - python {{ python_min }}
