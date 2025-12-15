@@ -59,7 +59,7 @@ outputs:
     about:
       license_file:
         - voici_core/LICENSE
-        - voici_core/static/build/*LICENSE*
+        - voici_core/voici_core/static/build/*LICENSE*
 
   - package:
       name: voici
