@@ -59,6 +59,8 @@ outputs:
     about:
       license_file:
         - voici_core/LICENSE
+        # TODO: replace glob with below after https://github.com/voila-dashboards/voici/pull/175
+        # - voici_core/voici_core/static/third-party-licenses.json
         - voici_core/voici_core/static/build/*LICENSE*
 
   - package:
