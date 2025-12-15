@@ -114,7 +114,7 @@ about:
 extra:
   feedstock-name: voici
   recipe-maintainers:
-    - jtpio
-    - trungleduc
-    - martinRenou
     - bollwyvl
+    - jtpio
+    - martinRenou
+    - trungleduc
