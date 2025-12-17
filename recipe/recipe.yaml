@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "0.10.0a0"
+  version: "0.10.0a1"
   python_check_max: "3.14"
 
 recipe:
@@ -11,10 +11,10 @@ recipe:
 
 source:
   - url: https://pypi.org/packages/source/v/voici_core/voici_core-${{ version }}.tar.gz
-    sha256: bf44be71060c65cec6d0b5d8dbb174f556ccb79a1d9f99bcefe0a8f6d13c413d
+    sha256: 6a5629c04c412eb87822e6e5efbe2e5cc07024865b373f2e48bc729121526fc9
     target_directory: voici_core
   - url: https://pypi.org/packages/source/v/voici/voici-${{ version }}.tar.gz
-    sha256: 94d2d7bfd573030f57b79f6b6c147d7d893d321582f53e35deec0b23339e60c4
+    sha256: fed50ad630b29427ca9ad78f79d8fcdba3b2c9607e45626f78f853ed63688e6f
     target_directory: voici
 
 build:
@@ -59,9 +59,7 @@ outputs:
     about:
       license_file:
         - voici_core/LICENSE
-        # TODO: replace glob with below after https://github.com/voila-dashboards/voici/pull/175
-        # - voici_core/voici_core/static/third-party-licenses.json
-        - voici_core/voici_core/static/build/*LICENSE*
+        - voici_core/voici_core/static/build/third-party-licenses.json
 
   - package:
       name: voici
@@ -79,7 +77,7 @@ outputs:
         - python ${{ python_min }}.*
       run:
         - ${{ pin_subpackage("voici_core", exact=True) }}
-        - jupyterlite-xeus >=4.3.4
+        - jupyterlite-xeus >=4.3.6
         - python >=${{ python_min }}
     tests:
       - python:
