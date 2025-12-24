@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "0.10.0a1"
+  version: "0.10.0a2"
   python_check_max: "3.14"
 
 recipe:
@@ -10,11 +10,11 @@ recipe:
   version: ${{ version }}
 
 source:
-  - url: https://pypi.org/packages/source/v/voici_core/voici_core-${{ version }}.tar.gz
-    sha256: 6a5629c04c412eb87822e6e5efbe2e5cc07024865b373f2e48bc729121526fc9
+  - url: https://pypi.org/packages/source/v/voici-core/voici_core-${{ version }}.tar.gz
+    sha256: b3e08e27556c592fa54ef5d9a508de86f18df31316636bdce892566b5b4ded01
     target_directory: voici_core
   - url: https://pypi.org/packages/source/v/voici/voici-${{ version }}.tar.gz
-    sha256: fed50ad630b29427ca9ad78f79d8fcdba3b2c9607e45626f78f853ed63688e6f
+    sha256: c46c911145bdcc79f1c9cda6df12365ecf2f1f7883aeeecbd5f92af5e4057bb1
     target_directory: voici
 
 build:
