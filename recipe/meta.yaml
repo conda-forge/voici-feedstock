@@ -1,5 +1,5 @@
 {% set name = "voici-packages" %}
-{% set version = "0.9.0" %}
+{% set version = "0.10.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   - url: https://pypi.org/packages/source/v/voici_core/voici_core-{{ version }}.tar.gz
-    sha256: 922299ef90e900fec6339e4ad0086ac4428c86e1d30c8265275e990bd37b8b83
+    sha256: fc3ddc58df7eccd56982cdb5b3ea4cb18126035a49c23d67adf338ef3fcd9440
     folder: voici_core
   - url: https://pypi.org/packages/source/v/voici/voici-{{ version }}.tar.gz
-    sha256: 303cda2d5e9a2d775330ae4de6abb79c2061e3d3181493fbd6901984d3d109fb
+    sha256: 3dca8a91dfdc157a433930b122e19fea5d77861d09358ad42af879ddbae9f972
     folder: voici
 
 build:
