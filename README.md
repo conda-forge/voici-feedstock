@@ -1,7 +1,11 @@
-About voici-packages-feedstock
-==============================
+About voici-feedstock
+=====================
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/voici-feedstock/blob/main/LICENSE.txt)
+
+
+About voici
+-----------
 
 Home: https://github.com/voila-dashboards/voici
 
@@ -19,6 +23,24 @@ Unlike Voilà, which renders interactive dashboards using server-side execution,
 Voici uses WebAssembly (Wasm) kernels to render notebooks in the browser,
 making the resulting dashboard entirely self-contained and distributable.
 
+About voici_core
+----------------
+
+Home: https://github.com/voila-dashboards/voici
+
+Package license: BSD-3-Clause
+
+Summary: Voici turns Jupyter notebooks into static web applications
+
+Development: https://github.com/voila-dashboards/voici
+
+Voici is a tool for generating static dashboards from Jupyter Notebooks.
+It can be used as a drop-in replacement for Voilà and it has the same
+commands and supports most of Voilà's configuration options.
+
+Unlike Voilà, which renders interactive dashboards using server-side execution,
+Voici uses WebAssembly (Wasm) kernels to render notebooks in the browser,
+making the resulting dashboard entirely self-contained and distributable.
 
 Current build status
 ====================
@@ -41,10 +63,10 @@ Current release info
 | [![Conda Recipe](https://img.shields.io/badge/recipe-voici-green.svg)](https://anaconda.org/conda-forge/voici) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/voici.svg)](https://anaconda.org/conda-forge/voici) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/voici.svg)](https://anaconda.org/conda-forge/voici) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/voici.svg)](https://anaconda.org/conda-forge/voici) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-voici__core-green.svg)](https://anaconda.org/conda-forge/voici_core) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/voici_core.svg)](https://anaconda.org/conda-forge/voici_core) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/voici_core.svg)](https://anaconda.org/conda-forge/voici_core) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/voici_core.svg)](https://anaconda.org/conda-forge/voici_core) |
 
-Installing voici-packages
-=========================
+Installing voici
+================
 
-Installing `voici-packages` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `voici` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
@@ -130,17 +152,17 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating voici-packages-feedstock
-=================================
+Updating voici-feedstock
+========================
 
-If you would like to improve the voici-packages recipe or build a new
+If you would like to improve the voici recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/voici-packages-feedstock are
+Note that all branches in the conda-forge/voici-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks, and branches in the main repository should only be used to
 build distinct package versions.
@@ -155,6 +177,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@bollwyvl](https://github.com/bollwyvl/)
 * [@jtpio](https://github.com/jtpio/)
 * [@martinRenou](https://github.com/martinRenou/)
 * [@trungleduc](https://github.com/trungleduc/)
